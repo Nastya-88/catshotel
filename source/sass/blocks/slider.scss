@@ -1,0 +1,96 @@
+#slider-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#slider {
+  width: 100%;
+  //   height: 384px;
+  height: 480px;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: $screen-tablet) {
+    height: 326px;
+    width: 678px;
+  }
+
+  @media (min-width: $screen-desktop) {
+    width: 1030px;
+    height: 404px;
+  }
+}
+.sli-links {
+  text-align: center;
+
+  @media (min-width: $screen-tablet) {
+    margin-top: 20px;
+  }
+}
+.sli-links .control-slide {
+  margin: 2px;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
+  text-indent: -9999px;
+  background: url(../img/radioBtn.png) center center no-repeat;
+}
+.sli-links .control-slide:hover {
+  cursor: pointer;
+  background-position: left center;
+}
+.sli-links .control-slide.active {
+  background-position: left center;
+}
+#prewbutton,
+#nextbutton {
+  display: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.25);
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  text-indent: -999px;
+  opacity: 0.8;
+  z-index: 3;
+  outline: none !important;
+  background: #ffffff url(../img/prev.svg) center center no-repeat;
+
+  @media (min-width: $screen-desktop) {
+    display: block;
+  }
+}
+#prewbutton {
+  right: 214px;
+}
+#nextbutton {
+  right: 168px;
+  background: #ffffff url(../img/next.svg) center center no-repeat;
+}
+#prewbutton:hover,
+#nextbutton:hover {
+  opacity: 1;
+}
+// .z1text {
+//   font-size: 20px;
+//   color: #fff;
+//   background: #1800ff;
+//   border: 1px solid #0c00e2;
+//   width: 300px;
+//   margin-top: 230px;
+//   border-right: 0px;
+//   right: 0px;
+//   position: absolute;
+//   padding: 12px 10px;
+//   background: rgb(0, 84, 163);
+//   background: linear-gradient(
+//     to bottom,
+//     rgba(0, 84, 163, 1) 0%,
+//     rgba(0, 42, 160, 1) 100%
+//   );
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0054a3', endColorstr='#002aa0',GradientType=0 );
+// }
