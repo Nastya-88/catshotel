@@ -1,0 +1,96 @@
+// --- BASE STYLES ---
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "Lato-regular";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/Lato-regular.woff") format("woff");
+}
+
+@font-face {
+  font-weight: normal;
+  font-family: "rubick-normal";
+  font-style: normal;
+  font-display: swap;
+  src: url("../fonts/rubick-normal.woff") format("woff");
+}
+
+.button {
+  width: 206px;
+  height: 50px;
+  cursor: pointer;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  color: #1a212f;
+  background-color: #fffefd;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 600;
+  border-radius: 25px;
+  font-family: Lato SemiBold;
+  text-align: center;
+}
+.circle {
+  border-radius: 50%;
+}
+
+a {
+  text-decoration: none;
+  color: #1a212f;
+
+  &:hover {
+    color: #777777;
+  }
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  white-space: nowrap;
+  border: 0;
+  clip-path: inset(100%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+section {
+  padding-top: 35px;
+  width: 100%;
+
+  @media (min-width: $screen-tablet) {
+    padding-top: 105px;
+  }
+  @media (min-width: $screen-desktop) {
+    padding-top: 135px;
+  }
+}
+.hidden {
+  display: none;
+}
