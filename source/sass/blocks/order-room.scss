@@ -1,0 +1,144 @@
+.order-room {
+  width: 290px;
+  height: 656px;
+  margin: 0 auto;
+  position: fixed;
+  top: 10px;
+  left: 10%;
+  z-index: 1000;
+  background: #fffefd;
+  box-shadow: 0px 0px 25px rgba(208, 208, 208, 0.25);
+  border-radius: 10px;
+  border: 1px solid #d7d7d7;
+  padding: 20px 15px 60px 15px;
+  padding-top: 0;
+
+  @media (min-width: $screen-tablet) {
+    top: 100px;
+    left: 20%;
+    width: 502px;
+    height: 629px;
+    padding: 25px 30px 60px 30px;
+  }
+
+  @media (min-width: $screen-desktop) {
+    width: 570px;
+    height: 649px;
+    padding: 40px 70px 70px 70px;
+    top: 100px;
+    left: 30%;
+  }
+}
+.order-room__wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+.order-room-backgroundimg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.order-room__toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+
+  @media (min-width: $screen-tablet) {
+    right: 25px;
+    top: 25px;
+  }
+  @media (min-width: $screen-desktop) {
+    right: 40px;
+    top: 40px;
+  }
+}
+.order-room__title {
+  font-size: 24px;
+  line-height: 28px;
+  padding: 35px 40px 35px 20px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 28px;
+    line-height: 33px;
+    padding-bottom: 45px;
+  }
+}
+.order-room__input {
+  width: 260px;
+  height: 52px;
+  border: 1px solid #d7d7d7;
+  box-sizing: border-box;
+  border-radius: 25px;
+  padding: 18px;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-tablet) {
+    width: 442px;
+  }
+  @media (min-width: $screen-desktop) {
+    width: 430px;
+  }
+}
+.order-room__legend {
+  flex-basis: 100%;
+  @media (min-width: $screen-tablet) {
+    flex-basis: auto;
+    padding-bottom: 13px;
+  }
+}
+.order-room__date-input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  padding-left: 6px;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 30px;
+  }
+}
+.order-room__input--date {
+  width: 107px;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 20px 15px;
+  color: #b5b5b5;
+  margin-top: 10px;
+  flex-basis: 107px;
+
+  @media (min-width: $screen-tablet) {
+    width: 132px;
+    margin-left: 10px;
+  }
+  @media (min-width: $screen-desktop) {
+    width: 129px;
+  }
+}
+
+.order-room__button {
+  background-color: $color-orange;
+  color: $color-white;
+  padding-left: 49px;
+  width: 260px;
+}
+.order-room__mute-background {
+  background: rgba(255, 254, 253, 0.8);
+  backdrop-filter: blur(3px);
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.order-room__circle {
+  background-color: $color-white;
+  width: 36px;
+  height: 36px;
+  padding: 9px 7px 9px 8px;
+}
+::placeholder {
+  color: #1a212f;
+}
