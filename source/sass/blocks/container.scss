@@ -1,0 +1,10 @@
+.container {
+  padding: 0 15px 30px 15px;
+
+  @media (min-width: $screen-tablet) {
+    padding: 0 45px;
+  }
+  @media (min-width: $screen-desktop) {
+    padding: 0 98px;
+  }
+}
