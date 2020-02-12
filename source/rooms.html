@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Котейка - Наши номера</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css" />
+    <link
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+  <body class="page">
+    <header class="page-header">
+      <div class="main-nav">
+        <div class="main-nav__logo-wrapper">
+          <a href="index.html" class="main-nav__item">
+            <picture>
+              <source
+                media="(min-width: 1366px)"
+                srcset="img/logo-tablet.png"
+              />
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png" />
+              <img
+                class="main-nav__logo-image"
+                src="img/logo-mobile.png"
+                alt="Логотип гостиницы Котейка"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1366px)"
+                srcset="img/catheader-tablet.png"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="img/catheader-tablet.png"
+              />
+              <img
+                class="main-nav__logo-image"
+                src="img/catheader-mobile.png"
+                alt="Логотип гостиницы Котейка"
+              />
+            </picture>
+          </a>
+        </div>
+        <a class="main-nav__toggle js-toggle" href="#">
+          <img
+            class="main-nav__toggle-burger"
+            src="img/burger.svg"
+            width="22"
+            height="14"
+            alt="Меню"
+          />
+        </a>
+        <nav class="main-nav__menu mobile-menu hidden">
+          <ul class="mobile-menu__list">
+            <a href="#" class="mobile-menu__logo-wrap">
+              <img
+                class="mobile-menu__logo-image"
+                src="img/logo.png"
+                width="23"
+                height="25"
+                alt="Логотип гостиницы Котейка"
+              />
+              <img
+                class="mobile-menu__logo-image"
+                src="img/catheader.png"
+                width="46"
+                height="10"
+                alt="Логотип гостиницы Котейка"
+              />
+            </a>
+            <a class="mobile-menu__toggle js-toggle" href="#">
+              <img
+                class="mobile-menu__closemenu"
+                src="img/closemenu.svg"
+                width="14"
+                height="14"
+                alt="Close menu"
+              />
+            </a>
+          </ul>
+          <ul class="main-nav__list site-list">
+            <li class="main-nav__list-container">
+              <a href="#" class="main-nav__list-link">Почему мы?</a>
+            </li>
+            <li class="main-nav__list-container">
+              <a href="#" class="main-nav__list-link">Отзывы</a>
+            </li>
+            <li class="main-nav__list-container">
+              <a href="rooms.html" class="main-nav__list-link">Номера</a>
+            </li>
+            <li class="main-nav__list-container">
+              <a href="#" class="main-nav__list-link">Как нас найти</a>
+            </li>
+          </ul>
+          <ul class="main-nav__list contacts-list">
+            <li
+              class="contacts-list__container contacts-list__container--phone"
+            >
+              <a href="tel:88003335599">8 (800) 333-55-99</a>
+            </li>
+            <li class="contacts-list__container contacts__social-items">
+              <a class="contacts__social--facebook social-item" href="#">
+                <img
+                  src="img/facebook.svg"
+                  width="24"
+                  height="24"
+                  alt="facebook"
+                />
+              </a>
+              <a class="contacts__social--instagram social-item" href="#">
+                <img
+                  src="img/instagram.svg"
+                  width="24"
+                  height="24"
+                  alt="instagram"
+                />
+              </a>
+              <a class="contacts__social--vk social-item" href="#">
+                <img src="img/vk.svg" width="16" height="9" alt="Vkontakte" />
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="page-main">
+      <div class="catalog">
+        <h1 class="catalog__title title">Наши номера</h1>
+        <div class="catalog__buttons">
+          <button class="catalog__button-filter">
+            Фильтры
+          </button>
+          <select class="catalog__button-sort">
+            <option value="1" class="catalog__option catalog__option--plussquare">
+              &uarr;&nbsp;По площади</option
+            >
+            <option value="2"  class="catalog__option catalog__option--minussquare">
+              &darr;&nbsp;По площади</option
+            >
+            <option value="1"  class="catalog__option catalog__option--plusprice">
+              &uarr;&nbsp;По цене</option
+            >
+            <option value="2"  class="catalog__option catalog__option--minusprice">
+              &darr;&nbsp;По цене</option
+            >
+          </select>
+        </div>
+
+        <div class="catalog__wrapper">
+          <aside class="catalog__filters hidden">
+            <div class="catalog__filters-wrapper">
+              <a class="catalog__filters-toggle js-toggle" href="#">
+                <img
+                  class="catalog__filters-closemenu"
+                  src="img/closemenu.svg"
+                  width="14"
+                  height="14"
+                  alt="Close menu"
+                />
+              </a>
+              <p class="catalog-text">Цена за сутки, ₽</p>
+              <div class="catalog__filters-price">
+                <input
+                  class="catalog__filters-input"
+                  type="text"
+                  placeholder="от 100"
+                />
+                <input
+                  class="catalog__filters-input"
+                  type="text"
+                  placeholder="до 600"
+                />
+              </div>
+
+              <p class="catalog-text">Площадь</p>
+              <div class="catalog__filters-square">
+                <p>
+                  <input type="checkbox" id="econom" checked /><label class="filter" for="econom"
+                  >0,63 м2</label
+                ></p>
+                <p>
+                  <input type="checkbox" id="econom-plus" checked /><label class="filter"
+                  for="econom-plus"
+                  >0,90 м2</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="comfort" checked /><label class="filter" for="comfort"
+                  >1,13 м2</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="suit" checked /><label class="filter" for="suit"
+                  >1,56 м2</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="lux" checked /><label class="filter" for="lux"
+                  >2,56 м2</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="superlux" checked /><label class="filter" for="superlux"
+                  >2,88 м2</label
+                >
+                </p>
+                
+              </div>
+              <p class="catalog-text">Оснащение номера</p>
+              <div class="catalog__filters-equipment">
+                <p>
+                  <input type="checkbox" id="empty-number" checked /><label class="filter"
+                  for="empty-number"
+                  >Пустой номер</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="sunbed" checked /><label class="filter" for="sunbed"
+                  >Лежак</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="kogtetochka" checked /><label class="filter"
+                  for="kogtetochka"
+                  >Когтеточка</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="gamestage" checked /><label class="filter" for="gamestage"
+                  >Игровой-комплекс</label
+                >
+                </p>
+                
+                <p>
+                  <input type="checkbox" id="home" checked /><label class="filter" for="home"
+                  >Домик</label
+                >
+                </p>
+                
+              </div>
+              <div class="catalog__filters-buttons">
+                <button class="catalog__button button">Подобрать</button>
+                <button class="catalog__button catalog__button--reset button">Сбросить фильтр</button>
+              </div>
+              <div class="catalog__mute-background mute-background"></div>
+            </div>
+          </aside>
+          <div class="catalog__container container">
+            <div class="catalog__items">
+              <article class="catalog__item">
+                <a class="catalog__link" href="econom.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/econom-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/econom-tablet.jpg"
+                      />
+                      <img
+                        class="catalog__image"
+                        src="img/econom-mobile.jpg"
+                        alt="Эконом"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Эконом</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 90х70х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 0,63 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <img
+                          class="catalog__icon"
+                          src="img/pusto.svg"
+                          alt="Nothing" title="Пустой номер"
+                        />
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">100₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+              </article>
+              <article class="catalog__item">
+                <a class="catalog__link" href="econom-plus.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/economplus-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/economplus-tablet.jpg"
+                      />
+                      <img
+                        class="rooms__image"
+                        src="img/economplus-mobile.jpg"
+                        alt="Эконом плюс"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Эконом плюс</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 90х100х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 0,90 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <svg class="inline-svg-icon">
+                          <title>Лежак</title>
+                          <use xlink:href="#bed"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Когтеточка</title>
+                          <use xlink:href="#kogtetochka"></use>
+                        </svg>
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">200₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+                
+              </article>
+              <article class="catalog__item">
+                <a class="catalog__link" href="comfort.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/comfortroom-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/comfortroom-tablet.jpg"
+                      />
+                      <img
+                        class="rooms__image"
+                        src="img/comfortroom-mobile.jpg"
+                        alt="Комфорт"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Комфорт</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 100х125х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 1,13 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <svg class="inline-svg-icon">
+                          <title>Лежак</title>
+                          <use xlink:href="#bed"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Когтеточка</title>
+                          <use xlink:href="#kogtetochka"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Игровой комплекс</title>
+                          <use xlink:href="#klubok"></use>
+                        </svg>
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">250₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+                
+              </article>
+              <article class="catalog__item">
+                <a class="catalog__link" href="suit.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/suitroom-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/suitroom-tablet.jpg"
+                      />
+                      <img
+                        class="rooms__image"
+                        src="img/suitroom-mobile.jpg"
+                        alt="Сьют"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Сьют</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 125х125х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 1,56 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <svg class="inline-svg-icon">
+                          <title>Лежак</title>
+                          <use xlink:href="#bed"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Когтеточка</title>
+                          <use xlink:href="#kogtetochka"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Игровой комплекс</title>
+                          <use xlink:href="#klubok"></use>
+                        </svg>
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">350₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+                
+              </article>
+              <article class="catalog__item">
+                <a class="catalog__link" href="lux.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/lux-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/lux-tablet.jpg"
+                      />
+                      <img
+                        class="rooms__image"
+                        src="img/lux-mobile.jpg"
+                        alt="Люкс"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Люкс</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 160х160х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 2,56 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <svg class="inline-svg-icon">
+                          <title>Лежак</title>
+                          <use xlink:href="#bed"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Когтеточка</title>
+                          <use xlink:href="#kogtetochka"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Игровой комплекс</title>
+                          <use xlink:href="#klubok"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Домик</title>
+                          <use xlink:href="#home"></use>
+                        </svg>
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">500₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+                
+              </article>
+              <article class="catalog__item">
+                <a class="catalog__link" href="superlux.html">
+                  <div class="catalog__item-photo">
+                    <picture>
+                      <source
+                        media="(min-width: 1366px)"
+                        srcset="img/superlux-desktop.jpg"
+                      />
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="img/superlux-tablet.jpg"
+                      />
+                      <img
+                        class="catalog__image"
+                        src="img/superlux-mobile.jpg"
+                        alt="Супер-Люкс"
+                      />
+                    </picture>
+                  </div>
+                  <div class="catalog__item-content">
+                    <h3 class="catalog__subtitle">Супер-Люкс</h3>
+                    <ul class="catalog__description">
+                      <li class="catalog__description-container">
+                        Размеры (ШхГхВ) - 180х160х180 см
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--square">
+                        Площадь - 2,88 м2
+                      </li>
+                      <li class="catalog__description-container">
+                        Оснащение номера
+                        <svg class="inline-svg-icon">
+                          <title>Лежак</title>
+                          <use xlink:href="#bed"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Когтеточка</title>
+                          <use xlink:href="#kogtetochka"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Игровой комплекс</title>
+                          <use xlink:href="#klubok"></use>
+                        </svg>
+  
+                        <svg class="inline-svg-icon">
+                          <title>Домик</title>
+                          <use xlink:href="#home"></use>
+                        </svg>
+                      </li>
+                      <li class="catalog__description-container catalog__description-container--price">
+                        Цена за сутки: <span class="catalog__price">600₽</span>
+                      </li>
+                    </ul>
+                    <button class="catalog__btn button button-reserve">
+                      Забронировать
+                      <div class="catalog__circle circle">
+                        <img
+                          src="img/paworange.svg"
+                          width="21"
+                          height="18"
+                          alt="Pow"
+                        />
+                      </div>
+                    </button>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+          <div class="result"></div>
+        </div>
+      </div>
+      <section class="action">
+        <div class="action__wrapper container">
+          <picture>
+            <source
+              media="(min-width: 1366px)"
+              srcset="img/pawcatalog-desktop.png"
+            />
+            <source
+              media="(min-width: 768px)"
+              srcset="img/pawcatalog-tablet.png"
+            />
+            <img
+              class="action__backgroundimg"
+              src="img/pawcatalog-mobile.png"
+              alt="Paw"
+            />
+          </picture>
+          <h2 class="action__title title">Каждый 7-й день</h2>
+          <h2 class="action__title title action__free">бесплатно!</h2>
+          <p class="action__text">
+            Акция действует при размещении в номерах “Люкс” и “Супер-Люкс”
+          </p>
+          <button class="action__btn button button-reserve">
+            Забронировать
+            <div class="action__circle circle">
+              <img src="img/powbtn.svg" width="21" height="18" alt="Pow" />
+            </div>
+          </button>
+        </div>
+      </section>
+      <section class="contacts">
+        <div class="contacts__wrapper container">
+          <h2 class="contacts__title title">Как нас найти</h2>
+          <div class="contacts__address">
+            <h4 class="contacts__subtitle">Адрес</h4>
+            <p class="contacts__text">
+              Санкт-Петербург, ул Большая Конюшенная, д 19
+            </p>
+          </div>
+          <div class="contacts__mode">
+            <h4 class="contacts__subtitle">Режим работы</h4>
+            <p class="contacts__text">Ежедневно, с 9:00 до 20:00</p>
+          </div>
+          <div class="contacts__phone">
+            <h4 class="contacts__subtitle">Телефон</h4>
+            <p class="contacts__text">8 (800) 333-55-99</p>
+          </div>
+          <div class="contacts__email">
+            <h4 class="contacts__subtitle">E-mail</h4>
+            <p class="contacts__text">info@cat-hotel.ru</p>
+          </div>
+          <div class="contacts__social">
+            <h4 class="contacts__subtitle">Социальные сети</h4>
+            <div class="contacts__social-items">
+              <a class="contacts__social--facebook social-item" href="#">
+                <img src="img/facebook.svg" alt="facebook" />
+              </a>
+              <a class="contacts__social--instagram social-item" href="#">
+                <img src="img/instagram.svg" alt="instagram" />
+              </a>
+              <a class="contacts__social--vk social-item" href="#">
+                <img src="img/vkontakte.svg" alt="Vkontakte" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="contacts__map">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async=""
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Af877f17e631030aee1da1533f8ad37d722f1f0c8d0d2031fa07634c3abf24fbb&amp;width=100%;height=300&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+        </div>
+      </section>
+    </main>
+    <footer class="page-footer">
+      <div class="page-footer__wrapper container">
+        <div class="page-footer__logo">
+          <a href="#" class="page-footer__logo-link">
+            <picture>
+              <source
+                media="(min-width: 1366px)"
+                srcset="img/logo-tablet.png"
+              />
+              <source media="(min-width: 768px)" srcset="img/logo-tablet.png" />
+              <img
+                class="page-footer__logo-image"
+                src="img/logo-mobile.png"
+                alt="Логотип гостиницы Котейка"
+              />
+            </picture>
+            <picture>
+              <source
+                media="(min-width: 1366px)"
+                srcset="img/catheader-tablet.png"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="img/catheader-tablet.png"
+              />
+              <img
+                class="page-footer__logo-image"
+                src="img/catheader-mobile.png"
+                alt="Логотип гостиницы Котейка"
+              />
+            </picture>
+          </a>
+        </div>
+        <ul class="page-footer__list">
+          <li class="page-footer__list-container">
+            <a href="#" class="page-footer__list-link">Почему мы?</a>
+          </li>
+          <li class="page-footer__list-container">
+            <a href="#" class="page-footer__list-link">Отзывы</a>
+          </li>
+          <li class="page-footer__list-container">
+            <a href="rooms.html" class="page-footer__list-link">Номера</a>
+          </li>
+          <li class="page-footer__list-container">
+            <a href="#" class="page-footer__list-link">Как нас найти</a>
+          </li>
+        </ul>
+      </div>
+      <div class="page-footer__copyright">
+        <p class="page-footer__text">&copy; 2020 Все права защищены</p>
+        <a class="page-footer__copyright-link" href="#"
+          >Политика конфиденциальности</a
+        >
+      </div>
+    </footer>
+    <section class="order-room hidden">
+      <div class="order-room__wrapper">
+        <picture>
+          <source
+            media="(min-width: 1366px)"
+            srcset="img/paw-popup-desktop.png"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="img/paw-popup-tablet.png"
+          />
+          <img
+            class="order-room-backgroundimg"
+            src="img/paw-popup-mobile.png"
+            alt="Paw"
+          />
+        </picture>
+        <a class="order-room__toggle js-toggle" href="#">
+          <img
+            class="order-room__closemenu"
+            src="img/closemenu.svg"
+            width="14"
+            height="14"
+            alt="Close menu"
+          />
+        </a>
+        <h2 class="order-room__title title">Забронировать номер</h2>
+        <form class="order-room__form" method="GET">
+          <div class="order-room__label-wrapper">
+            <p>
+              <input
+                class="order-room__input"
+                id="name"
+                type="text"
+                name="name"
+                placeholder="Ваше имя"
+              />
+            </p>
+            <p>
+              <input
+                class="order-room__input"
+                id="cat"
+                type="text"
+                name="cat"
+                placeholder="Имя Питомца"
+              />
+            </p>
+            <p>
+              <input
+                class="order-room__input"
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="Телефон"
+              />
+            </p>
+            <p>
+              <input
+                class="order-room__input"
+                id="email"
+                type="email"
+                name="email"
+                placeholder="E-mail"
+              />
+            </p>
+
+            <div class="order-room__date-input">
+              <p class="order-room__legend">Дата заезда</p>
+              <p>
+                <label class="order-room__label" for="check-in">с</label>
+                <input
+                  class="input order-room__input order-room__input--date"
+                  type="text"
+                  id="datepicker"
+                  name="datepicker"
+                  value=""
+                  placeholder="26.01.2020"
+                  required=""
+                />
+              </p>
+              <p>
+                <label class="order-room__label" for="check-out">по</label>
+                <input
+                  class="input order-room__input order-room__input--date"
+                  type="text"
+                  id="datepicker2"
+                  name="datepicker2"
+                  value=""
+                  placeholder="26.02.2020"
+                  required=""
+                />
+              </p>
+            </div>
+            <button class="order-room__button button" type="submit">
+              Отправить заявку
+              <div class="order-room__circle circle">
+                <img src="img/paworange.svg" width="21" height="18" alt="Pow" />
+              </div>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div class="order-room__mute-background mute-background"></div>
+    </section>
+    <section class="order-answer hidden">
+      <div class="order-answer__wrapper">
+        <picture>
+          <source
+            media="(min-width: 1366px)"
+            srcset="img/pawpopup-tablet.png"
+          />
+          <source media="(min-width: 768px)" srcset="img/pawpopup-tablet.png" />
+          <img
+            class="order-answer-backgroundimg"
+            src="img/pawpopup-mobile.png"
+            alt="Paw"
+          />
+        </picture>
+        <a class="order-answer__toggle js-toggle" href="#">
+          <img
+            class="order-answer__closemenu"
+            src="img/closemenu.svg"
+            width="14"
+            height="14"
+            alt="Close menu"
+          />
+        </a>
+        <h2 class="order-answer__title title">Спасибо за заявку!</h2>
+        <p class="order-answer__text">Мы свяжемся с вами в ближайшее время</p>
+        <button class="order-answer__button button" type="submit">
+          Ок
+          <div class="order-answer__circle circle">
+            <img src="img/paworange.svg" width="21" height="18" alt="Pow" />
+          </div>
+        </button>
+      </div>
+      <div class="order-answer__mute-background mute-background"></div>
+    </section>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="js/slick/slick.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/jquery.ui.datepicker-ru.js"></script>
+    <script>
+      $(function() {
+        $("#datepicker").datepicker($.datepicker.regional["ru"]);
+        $("#datepicker2").datepicker($.datepicker.regional["ru"]);
+      });
+    </script>
+    <script src="js/sort.js"></script>
+    <script src="js/filter.js"></script>
+  </body>
+</html>
