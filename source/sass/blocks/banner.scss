@@ -46,6 +46,7 @@
     background-size: cover;
     height: 504px;
     width: 650px;
+    padding-left: 198px;
   }
 }
 .banner__subtitle {
@@ -62,6 +63,9 @@
     font-size: 14px;
     line-height: 17px;
   }
+  @media (min-width: $screen-desktop) {
+    text-align: left;
+  }
 }
 
 .banner__title {
@@ -73,11 +77,14 @@
   color: #1a212f;
   margin: 0;
   padding: 0;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 
   @media (min-width: $screen-tablet) {
     font-size: 62px;
     line-height: 73px;
+  }
+  @media (min-width: $screen-desktop) {
+    text-align: left;
   }
 }
 .banner__subheader {
@@ -92,6 +99,9 @@
     line-height: 24px;
     font-weight: 500;
   }
+  @media (min-width: $screen-desktop) {
+    text-align: left;
+  }
 }
 .banner__circle {
   width: 36px;
@@ -102,6 +112,10 @@
 }
 .banner__btn {
   margin-bottom: 231px;
+
+  @media (min-width: $screen-desktop) {
+    margin: 0;
+  }
 }
 .banner__btn-image {
   margin: 9px 7px 9px 8px;
